@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +11,104 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="pieChart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="2pc-0H-n2B">
+                                <rect key="frame" x="270" y="197" width="94" height="32"/>
+                                <color key="backgroundColor" name="ColorD"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="94" id="EUt-Lc-oGA"/>
+                                    <constraint firstAttribute="height" constant="32" id="Tpk-3j-0iI"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="changeD:" destination="BYZ-38-t0r" eventType="valueChanged" id="SMR-oU-hg1"/>
+                                </connections>
+                            </stepper>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="VwP-HG-gGX">
+                                <rect key="frame" x="50" y="197" width="94" height="32"/>
+                                <color key="backgroundColor" name="ColorC"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="94" id="HNd-n5-Kjn"/>
+                                    <constraint firstAttribute="height" constant="32" id="fm7-Gs-I7N"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="changeC:" destination="BYZ-38-t0r" eventType="valueChanged" id="nBd-4b-GEW"/>
+                                </connections>
+                            </stepper>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="afb-Ry-GPs">
+                                <rect key="frame" x="50" y="148" width="94" height="32"/>
+                                <color key="backgroundColor" name="ColorA"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="94" id="6ee-NS-qQw"/>
+                                    <constraint firstAttribute="height" constant="32" id="zsu-vb-Fg0"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="changeA:" destination="BYZ-38-t0r" eventType="valueChanged" id="8Tk-zq-70T"/>
+                                </connections>
+                            </stepper>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Wzd-Cb-45z">
+                                <rect key="frame" x="270" y="148" width="94" height="32"/>
+                                <color key="backgroundColor" name="ColorB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="94" id="4zq-0e-N4E"/>
+                                    <constraint firstAttribute="height" constant="32" id="FEq-SV-cjN"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="changeB:" destination="BYZ-38-t0r" eventType="valueChanged" id="3Mt-ba-HYB"/>
+                                </connections>
+                            </stepper>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S0Z-3R-gZf" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="47.5" y="322" width="319" height="252"/>
+                                <color key="backgroundColor" red="0.077963031830000001" green="0.095494456589999999" blue="0.18187624220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="319" id="9dv-5O-yNS"/>
+                                    <constraint firstAttribute="height" constant="252" id="bGv-dd-JsJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.083716672865913222" green="0.087863690315620274" blue="0.18479546117903622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="afb-Ry-GPs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="104" id="147-ZN-d6m"/>
+                            <constraint firstItem="S0Z-3R-gZf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EFr-JQ-D4b"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2pc-0H-n2B" secondAttribute="trailing" constant="50" id="FGx-FO-15o"/>
+                            <constraint firstItem="Wzd-Cb-45z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="104" id="Fqy-ir-Tmx"/>
+                            <constraint firstItem="afb-Ry-GPs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="Qgf-UT-ZCs"/>
+                            <constraint firstItem="VwP-HG-gGX" firstAttribute="top" secondItem="afb-Ry-GPs" secondAttribute="bottom" constant="17" id="dPk-Go-oNR"/>
+                            <constraint firstItem="S0Z-3R-gZf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ejg-fj-quc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wzd-Cb-45z" secondAttribute="trailing" constant="50" id="kxP-1T-MRt"/>
+                            <constraint firstItem="VwP-HG-gGX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="mIY-Hv-uT6"/>
+                            <constraint firstItem="2pc-0H-n2B" firstAttribute="top" secondItem="Wzd-Cb-45z" secondAttribute="bottom" constant="17" id="sdY-Em-6OI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="aStepper" destination="afb-Ry-GPs" id="pFX-xA-Q7r"/>
+                        <outlet property="bStepper" destination="Wzd-Cb-45z" id="bQe-Ae-Wgt"/>
+                        <outlet property="cStepper" destination="VwP-HG-gGX" id="iux-Hq-GEM"/>
+                        <outlet property="dStepper" destination="2pc-0H-n2B" id="jsm-N4-GhB"/>
+                        <outlet property="piechart" destination="S0Z-3R-gZf" id="TRW-ND-gym"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="108.48214285714285"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="ColorA">
+            <color red="0.42800000309944153" green="0.6589999794960022" blue="0.4699999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorB">
+            <color red="0.38199999928474426" green="0.42100000381469727" blue="0.72899997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorC">
+            <color red="0.40200001001358032" green="0.52799999713897705" blue="0.73299998044967651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorD">
+            <color red="0.9570000171661377" green="0.69700002670288086" blue="0.46599999070167542" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

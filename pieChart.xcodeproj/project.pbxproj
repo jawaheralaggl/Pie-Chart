@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F0478C4B178EC66BEE484AE /* Pods_pieChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A458D5F1EF9B9BAE291596E /* Pods_pieChart.framework */; };
 		A54CCFF524D89720002F3503 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CCFF424D89720002F3503 /* AppDelegate.swift */; };
 		A54CCFF724D89720002F3503 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CCFF624D89720002F3503 /* SceneDelegate.swift */; };
 		A54CCFF924D89720002F3503 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CCFF824D89720002F3503 /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		54CD0415A7FDCD8C2040C522 /* Pods-pieChart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pieChart.release.xcconfig"; path = "Target Support Files/Pods-pieChart/Pods-pieChart.release.xcconfig"; sourceTree = "<group>"; };
+		75F0F2D442282D10D121F1D5 /* Pods-pieChart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pieChart.debug.xcconfig"; path = "Target Support Files/Pods-pieChart/Pods-pieChart.debug.xcconfig"; sourceTree = "<group>"; };
+		8A458D5F1EF9B9BAE291596E /* Pods_pieChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pieChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A54CCFF124D89720002F3503 /* pieChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pieChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A54CCFF424D89720002F3503 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A54CCFF624D89720002F3503 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F0478C4B178EC66BEE484AE /* Pods_pieChart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B2A16C600E4822B85903DBC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				75F0F2D442282D10D121F1D5 /* Pods-pieChart.debug.xcconfig */,
+				54CD0415A7FDCD8C2040C522 /* Pods-pieChart.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A54CCFE824D89720002F3503 = {
 			isa = PBXGroup;
 			children = (
 				A54CCFF324D89720002F3503 /* pieChart */,
 				A54CCFF224D89720002F3503 /* Products */,
+				1B2A16C600E4822B85903DBC /* Pods */,
+				E9EFA4F237B8FEDEA7FC615C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +83,14 @@
 			path = pieChart;
 			sourceTree = "<group>";
 		};
+		E9EFA4F237B8FEDEA7FC615C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A458D5F1EF9B9BAE291596E /* Pods_pieChart.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A54CD00524D89725002F3503 /* Build configuration list for PBXNativeTarget "pieChart" */;
 			buildPhases = (
+				4A9FC9D806C3F991B47C99DF /* [CP] Check Pods Manifest.lock */,
 				A54CCFED24D89720002F3503 /* Sources */,
 				A54CCFEE24D89720002F3503 /* Frameworks */,
 				A54CCFEF24D89720002F3503 /* Resources */,
+				F88FAFD478100D79A3AEC472 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4A9FC9D806C3F991B47C99DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-pieChart-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F88FAFD478100D79A3AEC472 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-pieChart/Pods-pieChart-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-pieChart/Pods-pieChart-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-pieChart/Pods-pieChart-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A54CCFED24D89720002F3503 /* Sources */ = {
@@ -282,11 +350,13 @@
 		};
 		A54CD00624D89725002F3503 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75F0F2D442282D10D121F1D5 /* Pods-pieChart.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6W4MA25Y33;
 				INFOPLIST_FILE = pieChart/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,11 +370,13 @@
 		};
 		A54CD00724D89725002F3503 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54CD0415A7FDCD8C2040C522 /* Pods-pieChart.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6W4MA25Y33;
 				INFOPLIST_FILE = pieChart/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
